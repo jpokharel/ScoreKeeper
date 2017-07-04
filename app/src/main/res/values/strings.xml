@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Score Keeper</string>
+    <string name="title_font_family">Times New Roman</string>
+    <string name="title_team_a_text">team a</string>
+    <string name="title_team_b_text">team b</string>
+    <string name="foul_score_init_value">0</string>
+    <string name="score_font_family">sans-serif-condensed</string>
+    <string name="goal_text">goal</string>
+    <string name="foul_text">foul</string>
+    <string name="reset_button_text">reset</string>
+    <string name="goal_init_value">0</string>
+</resources>
