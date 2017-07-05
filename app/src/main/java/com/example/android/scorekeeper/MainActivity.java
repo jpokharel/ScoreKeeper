@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import static com.example.android.scorekeeper.R.id.goal_button_team_a;
+
 public class MainActivity extends AppCompatActivity {
 
     int goalsTeamA = 0;
@@ -19,35 +21,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method adds the goal score for team A
+     * Implementing all the button clicks through control flow Case statement.
      */
-    public void addGoalsForA(View view) {
-        goalsTeamA += 1;
-        displayTeamAGoals(goalsTeamA);
-    }
+    public void buttonClick(View view){
+        int viewId = view.getId();
+        switch(viewId){
+            case goal_button_team_a:
+                goalsTeamA++;
+                displayTeamAGoals(goalsTeamA);
+                break;
+            case R.id.goal_button_team_b:
+                goalsTeamB++;
+                displayTeamBGoals(goalsTeamB);
+                break;
+            case R.id.foul_button_team_a:
+                foulsTeamA++;
+                displayTeamAFouls(foulsTeamA);
+                break;
+            case R.id.foul_button_team_b:
+                foulsTeamB++;
+                displayTeamBFouls(foulsTeamB);
+                break;
+            case R.id.reset_button:
+                goalsTeamA = 0;
+                goalsTeamB = 0;
+                foulsTeamA = 0;
+                foulsTeamB = 0;
 
-    /**
-     * This method adds the goal score for team B
-     */
-    public void addGoalsForB(View view) {
-        goalsTeamB += 1;
-        displayTeamBGoals(goalsTeamB);
-    }
-
-    /**
-     * This method adds foul counts for team A
-     */
-    public void addFoulsForA(View view) {
-        foulsTeamA += 1;
-        displayteamAFouls(foulsTeamA);
-    }
-
-    /**
-     * This method adds foul counts for team B
-     */
-    public void addFoulsForB(View view) {
-        foulsTeamB += 1;
-        displayteamBFouls(foulsTeamB);
+                displayTeamAGoals(goalsTeamA);
+                displayTeamBGoals(goalsTeamB);
+                displayTeamAFouls(foulsTeamA);
+                displayTeamBFouls(foulsTeamB);
+                break;
+        }
     }
 
     /**
@@ -69,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays the foul score for team A.
      */
-    public void displayteamAFouls(int score) {
+    public void displayTeamAFouls(int score) {
         TextView scoreView = (TextView) findViewById(R.id.foul_score_team_a);
         scoreView.setText(String.valueOf(score));
     }
@@ -77,23 +83,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays the foul score for team B.
      */
-    public void displayteamBFouls(int score) {
+    public void displayTeamBFouls(int score) {
         TextView scoreView = (TextView) findViewById(R.id.foul_score_team_b);
         scoreView.setText(String.valueOf(score));
-    }
-
-    /**
-     * Resets both goals and fouls for both teams and displays in the UI.
-     */
-    public void resetScores(View view) {
-        goalsTeamA = 0;
-        goalsTeamB = 0;
-        foulsTeamA = 0;
-        foulsTeamB = 0;
-
-        displayTeamAGoals(goalsTeamA);
-        displayTeamBGoals(goalsTeamB);
-        displayteamAFouls(foulsTeamA);
-        displayteamBFouls(foulsTeamB);
     }
 }

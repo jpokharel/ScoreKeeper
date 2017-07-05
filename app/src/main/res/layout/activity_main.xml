@@ -74,7 +74,7 @@
                 android:layout_marginLeft="@dimen/buttons_margin_left"
                 android:layout_marginRight="@dimen/buttons_margin_right"
                 android:fontFamily="@string/score_font_family"
-                android:onClick="addGoalsForA"
+                android:onClick="buttonClick"
                 android:text="@string/goal_text"
                 android:textColor="@color/goal_score_text_color"
                 android:textStyle="bold" />
@@ -87,7 +87,7 @@
                 android:layout_marginLeft="@dimen/buttons_margin_left"
                 android:layout_marginRight="@dimen/buttons_margin_right"
                 android:layout_marginTop="@dimen/buttons_margin_top"
-                android:onClick="addFoulsForA"
+                android:onClick="buttonClick"
                 android:text="@string/foul_text"
                 android:textAllCaps="true"
                 android:textColor="@color/foul_score_text_color"
@@ -164,7 +164,7 @@
                 android:layout_marginLeft="@dimen/buttons_margin_left"
                 android:layout_marginRight="@dimen/buttons_margin_right"
                 android:fontFamily="@string/score_font_family"
-                android:onClick="addGoalsForB"
+                android:onClick="buttonClick"
                 android:text="@string/goal_text"
                 android:textColor="@color/goal_score_text_color"
                 android:textStyle="bold" />
@@ -177,7 +177,7 @@
                 android:layout_marginLeft="@dimen/buttons_margin_left"
                 android:layout_marginRight="@dimen/buttons_margin_right"
                 android:layout_marginTop="@dimen/buttons_margin_top"
-                android:onClick="addFoulsForB"
+                android:onClick="buttonClick"
                 android:text="@string/foul_text"
                 android:textAllCaps="true"
                 android:textColor="@color/foul_score_text_color"
@@ -186,13 +186,14 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/reset_button_margin"
         android:fontFamily="@string/score_font_family"
-        android:onClick="resetScores"
+        android:onClick="buttonClick"
         android:text="@string/reset_button_text"
         android:textAllCaps="true"
         android:textSize="@dimen/reset_button_text_size" />
